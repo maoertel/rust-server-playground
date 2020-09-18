@@ -1,6 +1,4 @@
-use actix_web::{App, get, HttpResponse, HttpServer, post, Result, web};
-use actix_web::body::ResponseBody::Body;
-use deadpool_postgres::Pool;
+use actix_web::{App, HttpServer};
 use dotenv::dotenv;
 use tokio_postgres::NoTls;
 

@@ -1,8 +1,8 @@
-use actix_web::{App, get, HttpResponse, HttpServer, post, delete, Result, web, ResponseError};
+use actix_web::{get, HttpResponse, post, delete, Result, web, ResponseError};
 use crate::user_dao::{add_user, get_user, delete_user};
 use deadpool_postgres::{Client, Pool};
 use crate::errors::MyError;
-use crate::user::{UserDraft, User};
+use crate::user::UserDraft;
 use uuid::Uuid;
 
 
@@ -32,7 +32,7 @@ async fn get_user_by_id(
   match maybe_user {
     Ok(user) => Ok(HttpResponse::Ok().json(user)),
     Err(error) => Ok(match error {
-      MyError::NotFound => HttpResponse::NotFound().body(error.status_code().to_string()),
+      MyError::NotFound => HttpResponse::NotFound().body(format!("The resource with the id {} was not found.", uuid)),
       _ => HttpResponse::InternalServerError().body(error.status_code().to_string()),
     })
   }
