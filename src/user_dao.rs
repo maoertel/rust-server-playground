@@ -21,13 +21,13 @@ pub async fn get_user(client: &Client, uuid: Uuid) -> Result<User, MyError> {
     .ok_or(MyError::NotFound)
 }
 
-pub async fn add_user(client: &Client, user: UserDraft) -> Result<User, MyError> {
+pub async fn add_user(client: &Client, user: UserDraft) -> Result<User, Error> {
   let _stmt = include_str!("sql/add_user.sql");
   let _stmt = _stmt.replace("$table_fields", &User::sql_table_fields());
   let stmt = client.prepare(&_stmt).await.unwrap();
 
   client
-    .query(
+    .query_one(
       &stmt,
       &[
         &user.first_name,
@@ -35,12 +35,8 @@ pub async fn add_user(client: &Client, user: UserDraft) -> Result<User, MyError>
         &user.age,
       ],
     )
-    .await?
-    .iter()
-    .map(|row| User::from_row_ref(row).unwrap())
-    .collect::<Vec<User>>()
-    .pop()
-    .ok_or(MyError::NotFound) // more applicable for SELECTs
+    .await
+    .map(|row| User::from_row_ref(&row).unwrap())
 }
 
 pub async fn delete_user(client: &Client, uuid: Uuid) -> Result<u64, Error> {

@@ -49,7 +49,7 @@ async fn create_user(
 
   match maybe_added_user {
     Ok(user) => Ok(HttpResponse::Ok().json(user)),
-    Err(error) => Ok(HttpResponse::NotFound().body(error.status_code().to_string()))
+    Err(_) => Ok(HttpResponse::InternalServerError().body("Something went wrong."))
   }
 }
 
