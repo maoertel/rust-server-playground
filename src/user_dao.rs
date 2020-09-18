@@ -3,51 +3,38 @@ use tokio_pg_mapper::FromTokioPostgresRow;
 
 use crate::{errors::MyError};
 use crate::user::{User, UserDraft};
-use tokio_postgres::{Statement, Error};
+use tokio_postgres::{Statement, Error, Row};
 use uuid::Uuid;
 
 pub async fn get_user(client: &Client, uuid: Uuid) -> Result<User, MyError> {
-  let _stmt = include_str!("sql/get_user.sql");
-  let _stmt = _stmt.replace("$table_fields", &User::sql_table_fields());
-  let stmt = client.prepare(&_stmt).await.unwrap();
+  let statement = create_statement(&client, include_str!("sql/get_user.sql")).await;
 
   client
-    .query_opt(
-      &stmt,
-      &[&uuid],
-    )
+    .query_opt(&statement, &[&uuid])
     .await?
-    .map(|row| User::from_row_ref(&row).unwrap())
+    .map(&convert_row_to_user)
     .ok_or(MyError::NotFound)
 }
 
 pub async fn add_user(client: &Client, user: UserDraft) -> Result<User, Error> {
-  let _stmt = include_str!("sql/add_user.sql");
-  let _stmt = _stmt.replace("$table_fields", &User::sql_table_fields());
-  let stmt = client.prepare(&_stmt).await.unwrap();
+  let statement = create_statement(&client, include_str!("sql/add_user.sql")).await;
 
   client
-    .query_one(
-      &stmt,
-      &[
-        &user.first_name,
-        &user.last_name,
-        &user.age,
-      ],
-    )
+    .query_one(&statement, &[&user.first_name, &user.last_name, &user.age])
     .await
-    .map(|row| User::from_row_ref(&row).unwrap())
+    .map(&convert_row_to_user)
 }
 
 pub async fn delete_user(client: &Client, uuid: Uuid) -> Result<u64, Error> {
-  let _stmt = include_str!("sql/delete_user.sql");
-  // let _stmt = _stmt.replace("$table_fields", &User::sql_table_fields());
-  let stmt = client.prepare(&_stmt).await.unwrap();
+  let statement = create_statement(&client, include_str!("sql/delete_user.sql")).await;
+  client.execute(&statement, &[&uuid]).await
+}
 
-  client
-    .execute(
-      &stmt,
-      &[&uuid],
-    )
-    .await
+fn convert_row_to_user(row: Row) -> User {
+  User::from_row_ref(&row).unwrap()
+}
+
+async fn create_statement(client: &Client, sql_query: &str) -> Statement {
+  let sql_query = sql_query.replace("$table_fields", &User::sql_table_fields());
+  client.prepare(&sql_query).await.unwrap()
 }

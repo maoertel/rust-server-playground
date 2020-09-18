@@ -17,7 +17,7 @@ mod errors;
 async fn main() -> std::io::Result<()> {
   dotenv().ok();
 
-  let config = crate::config::Config::from_env().unwrap();
+  let config = crate::config::Config::load().unwrap();
   let pool = config.pg.create_pool(NoTls).unwrap();
 
   let server_address = format!("{}:{}", config.host, config.port);
