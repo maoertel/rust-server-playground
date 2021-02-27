@@ -1,10 +1,10 @@
-use actix_web::{get, HttpResponse, post, delete, Result, web, ResponseError};
-use crate::user_dao::{add_user, get_user, delete_user};
+use actix_web::{delete, get, HttpResponse, post, ResponseError, Result, web};
 use deadpool_postgres::{Client, Pool};
-use crate::errors::MyError;
-use crate::user::UserDraft;
 use uuid::Uuid;
 
+use crate::errors::MyError;
+use crate::user::UserDraft;
+use crate::user_dao::{add_user, delete_user, get_user};
 
 #[derive(Debug)]
 pub struct UserRepository {}

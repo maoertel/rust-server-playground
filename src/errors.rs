@@ -11,6 +11,7 @@ pub enum MyError {
   PGMError(PGMError),
   PoolError(PoolError),
 }
+
 impl std::error::Error for MyError {}
 
 impl ResponseError for MyError {

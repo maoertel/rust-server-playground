@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="CargoProjects">
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b336b74-bac7-43da-8b9f-0b7e1c2964a1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user_dao.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_dao.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/user_repository.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_repository.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,54 +57,46 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="org.rust.disableDetachedFileInspection/Users/moertel/Documents/Projekte/Rust/worktime/src/model/user.rs" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
-  <component name="RunManager" selected="Cargo Command.Run worktime">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Cargo.Run worktime">
     <configuration name="Expand worktime::errors" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="channel" value="DEFAULT" />
       <option name="command" value="expand --bin worktime --color=always --theme=GitHub --tests errors" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
       <option name="allFeatures" value="false" />
       <option name="emulateTerminal" value="false" />
       <option name="backtrace" value="SHORT" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
       <method v="2">
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
     <configuration name="Run worktime" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="channel" value="DEFAULT" />
       <option name="command" value="run --package worktime --bin worktime" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
       <option name="allFeatures" value="false" />
       <option name="emulateTerminal" value="false" />
       <option name="backtrace" value="SHORT" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
       <method v="2">
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cargo Command.Run worktime" />
-        <item itemvalue="Cargo Command.Expand worktime::errors" />
-        <item itemvalue="Cargo Command.Expand worktime::errors" />
+        <item itemvalue="Cargo.Run worktime" />
       </list>
     </recent_temporary>
   </component>
@@ -121,7 +119,14 @@
       <workItem from="1600260182290" duration="18000" />
       <workItem from="1600260214467" duration="152000" />
       <workItem from="1600260387544" duration="10478000" />
-      <workItem from="1600300563760" duration="26085000" />
+      <workItem from="1600300563760" duration="26932000" />
+      <workItem from="1600434142198" duration="700000" />
+      <workItem from="1600713277725" duration="590000" />
+      <workItem from="1600882211777" duration="172000" />
+      <workItem from="1601386113215" duration="2372000" />
+      <workItem from="1601456515507" duration="490000" />
+      <workItem from="1601554753819" duration="25000" />
+      <workItem from="1614439797675" duration="587000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1600409614598</created>
@@ -151,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600420031533</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="remove unused imports">
+      <created>1600428029404</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1600428029404</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,107 +174,25 @@
     <MESSAGE value="add delete user" />
     <MESSAGE value="simpliciy add user query" />
     <MESSAGE value="factor out creation of query statement" />
-    <option name="LAST_COMMIT_MESSAGE" value="factor out creation of query statement" />
+    <MESSAGE value="remove unused imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove unused imports" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1597" y="376" key="#SQL_Dialects" timestamp="1600295589494">
+    <state width="1878" height="493" key="GridCell.Tab.0.bottom" timestamp="1614440147993">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1597" y="376" key="#SQL_Dialects/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1600295589494" />
-    <state x="-1360" y="205" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600359515782">
+    <state width="1878" height="493" key="GridCell.Tab.0.bottom/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1614440147993" />
+    <state width="1878" height="493" key="GridCell.Tab.0.center" timestamp="1614440147992">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1360" y="205" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1600359515782" />
-    <state x="-1225" y="349" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600293759946">
+    <state width="1878" height="493" key="GridCell.Tab.0.center/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1614440147992" />
+    <state width="1878" height="493" key="GridCell.Tab.0.left" timestamp="1614440147991">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1225" y="349" key="#com.intellij.fileTypes.FileTypeChooser/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1600293759946" />
-    <state x="-1147" y="263" key="#com.intellij.ide.util.MemberChooser" timestamp="1600094884719">
+    <state width="1878" height="493" key="GridCell.Tab.0.left/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1614440147991" />
+    <state width="1878" height="493" key="GridCell.Tab.0.right" timestamp="1614440147993">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1147" y="263" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1600094884719" />
-    <state x="-1920" y="0" width="1920" height="1080" key="CommitChangelistDialog2" timestamp="1600420031423">
-      <screen x="-1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="-1920" y="0" width="1920" height="1080" key="CommitChangelistDialog2/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1600420031423" />
-    <state x="-1632" y="109" key="DiffContextDialog" timestamp="1600420029014">
-      <screen x="-1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="-1632" y="109" key="DiffContextDialog/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1600420029014" />
-    <state width="1878" height="376" key="GridCell.Tab.0.bottom" timestamp="1600427749704">
-      <screen x="-1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.0.bottom/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1600427749704" />
-    <state width="1878" height="376" key="GridCell.Tab.0.bottom/-1920.0.1920.1080/0.23.1680.1027@-1920.0.1920.1080" timestamp="1600338798852" />
-    <state width="1878" height="376" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.1680.1027@-1920.23.1920.1057" timestamp="1600357972812" />
-    <state width="1638" height="416" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1600143489972" />
-    <state width="1878" height="376" key="GridCell.Tab.0.center" timestamp="1600427749703">
-      <screen x="-1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.0.center/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1600427749703" />
-    <state width="1878" height="376" key="GridCell.Tab.0.center/-1920.0.1920.1080/0.23.1680.1027@-1920.0.1920.1080" timestamp="1600338798851" />
-    <state width="1878" height="376" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.1680.1027@-1920.23.1920.1057" timestamp="1600357972811" />
-    <state width="1638" height="416" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1600143489970" />
-    <state width="1878" height="376" key="GridCell.Tab.0.left" timestamp="1600427749701">
-      <screen x="-1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.0.left/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1600427749701" />
-    <state width="1878" height="376" key="GridCell.Tab.0.left/-1920.0.1920.1080/0.23.1680.1027@-1920.0.1920.1080" timestamp="1600338798850" />
-    <state width="1878" height="376" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.1680.1027@-1920.23.1920.1057" timestamp="1600357972811" />
-    <state width="1638" height="416" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1600143489968" />
-    <state width="1878" height="376" key="GridCell.Tab.0.right" timestamp="1600427749703">
-      <screen x="-1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.0.right/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1600427749703" />
-    <state width="1878" height="376" key="GridCell.Tab.0.right/-1920.0.1920.1080/0.23.1680.1027@-1920.0.1920.1080" timestamp="1600338798852" />
-    <state width="1878" height="376" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.1680.1027@-1920.23.1920.1057" timestamp="1600357972812" />
-    <state width="1638" height="416" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1600143489971" />
-    <state width="1878" height="376" key="GridCell.Tab.1.bottom" timestamp="1600427749708">
-      <screen x="-1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.1.bottom/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1600427749708" />
-    <state width="1878" height="376" key="GridCell.Tab.1.bottom/-1920.0.1920.1080/0.23.1680.1027@-1920.0.1920.1080" timestamp="1600338802739" />
-    <state width="1878" height="376" key="GridCell.Tab.1.bottom/-1920.23.1920.1057/0.23.1680.1027@-1920.23.1920.1057" timestamp="1600366870924" />
-    <state width="1878" height="376" key="GridCell.Tab.1.center" timestamp="1600427749706">
-      <screen x="-1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.1.center/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1600427749706" />
-    <state width="1878" height="376" key="GridCell.Tab.1.center/-1920.0.1920.1080/0.23.1680.1027@-1920.0.1920.1080" timestamp="1600338802737" />
-    <state width="1878" height="376" key="GridCell.Tab.1.center/-1920.23.1920.1057/0.23.1680.1027@-1920.23.1920.1057" timestamp="1600366870923" />
-    <state width="1878" height="376" key="GridCell.Tab.1.left" timestamp="1600427749705">
-      <screen x="-1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.1.left/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1600427749705" />
-    <state width="1878" height="376" key="GridCell.Tab.1.left/-1920.0.1920.1080/0.23.1680.1027@-1920.0.1920.1080" timestamp="1600338802736" />
-    <state width="1878" height="376" key="GridCell.Tab.1.left/-1920.23.1920.1057/0.23.1680.1027@-1920.23.1920.1057" timestamp="1600366870922" />
-    <state width="1878" height="376" key="GridCell.Tab.1.right" timestamp="1600427749707">
-      <screen x="-1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.1.right/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1600427749707" />
-    <state width="1878" height="376" key="GridCell.Tab.1.right/-1920.0.1920.1080/0.23.1680.1027@-1920.0.1920.1080" timestamp="1600338802738" />
-    <state width="1878" height="376" key="GridCell.Tab.1.right/-1920.23.1920.1057/0.23.1680.1027@-1920.23.1920.1057" timestamp="1600366870924" />
-    <state x="-1459" y="179" key="SettingsEditor" timestamp="1600260366558">
-      <screen x="-1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="-1459" y="179" key="SettingsEditor/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1600260366558" />
-    <state x="-1162" y="461" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600367154474">
-      <screen x="-1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="-1162" y="461" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1600367154474" />
-    <state x="-1259" y="266" width="598" height="548" key="find.popup" timestamp="1600289282953">
-      <screen x="-1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="-1259" y="266" width="598" height="548" key="find.popup/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1600289282953" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/user_repository.rs</url>
-          <line>33</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state width="1878" height="493" key="GridCell.Tab.0.right/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1614440147993" />
   </component>
 </project>

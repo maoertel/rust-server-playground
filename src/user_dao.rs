@@ -1,10 +1,10 @@
 use deadpool_postgres::Client;
 use tokio_pg_mapper::FromTokioPostgresRow;
+use tokio_postgres::{Error, Row, Statement};
+use uuid::Uuid;
 
 use crate::{errors::MyError};
 use crate::user::{User, UserDraft};
-use tokio_postgres::{Statement, Error, Row};
-use uuid::Uuid;
 
 pub async fn get_user(client: &Client, uuid: Uuid) -> Result<User, MyError> {
   let statement = create_statement(&client, include_str!("sql/get_user.sql")).await;
